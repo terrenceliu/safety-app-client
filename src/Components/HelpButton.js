@@ -15,41 +15,20 @@ const styles = (props) => {
 class HelpButton extends Component {
     constructor() {
         super();
-        this.state = {
-            active: false
-        }
-        this.timeID = undefined;
         
     }
-    
-    openRequest = (socket) => {
-        let active = this.state.active;
-        if (!active) {
-            this.timeID = setInterval(function() {
-                socket.emit('request', 'hello, world');
-            }, 1000);
-            console.log("Start Time ID", this.timeID);
-        } else {
-            console.log("Stop Time ID", this.timeID);
-            clearInterval(this.timeID);
-        }
 
-        this.setState({
-            active: !active
-        });
-    }
+   
     
     render() {
         const { classes } = this.props;
-
-        const { socket } = this.props;
 
         return (
             <Button 
                 variant="fab" 
                 color="primary" 
                 aria-label="add"
-                onClick={() => this.openRequest(socket)}>
+                onClick={this.props.openRequest}>
                 <AddIcon />
             </Button>
         );
