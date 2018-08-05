@@ -35,10 +35,10 @@ class App extends Component {
         socket.on("case id", (id) => {
             this.setState({
                 case_id: id
-            })
+            });
             console.log("[Socket] Assigned case id: ", id);
         })
-
+        
         this.setState({
             socket: socket
         })
