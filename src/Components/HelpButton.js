@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import Icon from '@material-ui/core/Icon';
 import AddIcon from '@material-ui/icons/Add';
 
 
@@ -18,8 +17,6 @@ class HelpButton extends Component {
         
     }
 
-   
-    
     render() {
         const { classes } = this.props;
 
